@@ -13,14 +13,14 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     end
     test "should create user" do
       assert_difference('User.count') do
-      post api_v1_users_url, params: { user: { email:
+      post api_v1_users_url, params: { user: { username: "sam", email:
       'test@test.org', password: '123456' } }, as: :json
       end
       assert_response :created
       end
       test "should not create user with taken email" do
       assert_no_difference('User.count') do
-      post api_v1_users_url, params: { user: { email: @user
+      post api_v1_users_url, params: { user: { username: "sam" email: @user
       .email, password: '123456' } }, as: :json
       end
       assert_response :unprocessable_entity
@@ -44,7 +44,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
           
             test "should forbid update user" do
-            patch api_v1_user_url(@user), params: { user: { email:
+            patch api_v1_user_url(@user), params: { user: { username: "sam", email:
             @user.email } }, as: :json
             assert_response :forbidden
             end
