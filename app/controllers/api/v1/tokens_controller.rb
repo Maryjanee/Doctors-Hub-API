@@ -22,7 +22,10 @@ class Api::V1::TokensController < ApplicationController
           email: @user.email
         }
       else
-        head :unauthorized
+        render json: {
+          error: "Invalid User Details"
+        } , 
+        status: :unauthorized
       end
     end
 end
