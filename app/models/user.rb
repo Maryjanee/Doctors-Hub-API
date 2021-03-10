@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_secure_password
+    has_many :appointments, dependent: :destroy
     validates :email, uniqueness: true
     validates :username, presence: true
     validates_format_of :email, with: /@/
