@@ -1,11 +1,11 @@
-class AppointmentsController < ApplicationController
-    before_action :logged_in
+class Api::V1::AppointmentsController < ApplicationController
+    before_action :current_user
 
 
     def index
         @appointments = Appointment.where(user_id: @current_user.id)
         if @appointments
-          render : @appointments
+          render json: @appointments
         else
           render json: 'No appointments yet'
         end

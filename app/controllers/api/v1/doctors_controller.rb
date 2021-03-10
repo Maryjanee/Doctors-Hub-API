@@ -1,9 +1,9 @@
 class Api::V1::DoctorsController < ApplicationController
-    before_action :logged_in
+    before_action :current_user
     
     def index
         @doctors = Doctor.all
-        if @users
+        if @doctors
             render json: @doctors
         else
             render json: "No doctors available"
