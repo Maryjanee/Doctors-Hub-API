@@ -1,4 +1,6 @@
 class Api::V1::DoctorsController < ApplicationController
+    before_action :logged_in
+    
     def index
         @doctors = Doctor.all
         if @users
