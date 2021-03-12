@@ -7,7 +7,7 @@ class CreateDoctors < ActiveRecord::Migration[6.1]
       t.string :location, null: false
       t.string :fees, null: false
       t.string :email, null: false
-
+      t.string :photo, 
 
       t.timestamps
     end

@@ -4,6 +4,8 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
       add_reference :users, foreign_key: true
       t.date :date
       t.string :city
+      t.string :doctor_name
+      t.string :username
 
       t.timestamps
     end
