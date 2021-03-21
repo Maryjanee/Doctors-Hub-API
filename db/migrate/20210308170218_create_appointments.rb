@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# createappointment
 class CreateAppointments < ActiveRecord::Migration[6.1]
   def change
     create_table :appointments do |t|
@@ -11,3 +14,5 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
     end
   end
 end
+
+# :nodoc:

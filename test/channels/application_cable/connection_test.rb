@@ -1,6 +1,9 @@
-require "test_helper"
+# frozen_string_literal: true
 
-class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
+require 'test_helper'
+
+class ApplicationCable
+  class ConnectionTest < ActionCable::Connection::TestCase
   # test "connects with cookies" do
   #   cookies.signed[:user_id] = 42
   #
